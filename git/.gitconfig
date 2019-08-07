@@ -1,0 +1,17 @@
+[alias]
+	stauts = status
+	pr = pull --rebase
+	aa = add -A .
+	co = checkout
+	st = status
+	lg = log --graph --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Cgreen(%cr)%n%Creset%<(70,mtrunc)%s'
+	theirs = !git checkout --theirs $1 && git add
+	ours = !git checkout --ours $1 && git add
+	cm = commit -m
+	sync = !git pull --rebase && git push
+[merge]
+	tool = p4merge
+[mergetool "p4merge"]
+	cmd = \"C:\\Program Files\\Perforce\\p4merge.exe\" \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+	trustexitcode = true
+	keepbackup = false
